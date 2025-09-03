@@ -7,7 +7,7 @@ public class Ebike extends Bicycle
 	{
 	      super (id);
 	      this.battery=battery;
-	      System.out.println("Ebike() constructor is callled");
+	      System.out.println("Ebike() constructor is called");
 	}
 	@Override
 	public void deliver(String item, String place) {
