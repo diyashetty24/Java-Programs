@@ -1,0 +1,8 @@
+package library;
+
+public interface CanIssue 
+{
+	boolean giveBook();
+    boolean takeBookBack();
+
+}
