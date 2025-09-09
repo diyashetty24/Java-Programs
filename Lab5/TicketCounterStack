@@ -13,7 +13,7 @@ public class TicketCounterStack {
   sc.nextLine();
 
 			if (choice == 1) {
-			    System.out.print("Enter size: ");
+			    System.out.print(" size: ");
 			    int size = sc.nextInt();
 			    sc.nextLine();
 			    st = new Stack(size);
@@ -23,9 +23,9 @@ public class TicketCounterStack {
 			    sc.nextLine();
 			    Person arr[] = new Person[n];
 			    for (int i = 0; i < n; i++) {
-			        System.out.print("Enter name: ");
+			        System.out.print(" name: ");
 			        String name = sc.nextLine();
-			        System.out.print("Enter age: ");
+			        System.out.print("age: ");
 			        int age = sc.nextInt();
 			        sc.nextLine();
 			        System.out.print("Enter gender (MALE/FEMALE/OTHER): ");
@@ -51,9 +51,9 @@ public class TicketCounterStack {
 
 			    switch(option) {
 			        case 1:
-			            System.out.print("Enter name: ");
+			            System.out.print("name: ");
 			            String name1 = sc.nextLine();
-			            System.out.print("Enter age: ");
+			            System.out.print("age: ");
  
 			            int age1 = sc.nextInt();
 			            sc.nextLine();
@@ -65,7 +65,7 @@ public class TicketCounterStack {
 			     case 2:
 			            System.out.print("Enter name for Person 1: ");
 			            String n1 = sc.nextLine();
-			            System.out.print("Enter age: ");
+			            System.out.print(" age: ");
 			            int a1 = sc.nextInt();
 			            sc.nextLine();
 			            System.out.print("Enter gender (MALE/FEMALE/OTHER): ");
@@ -73,7 +73,7 @@ public class TicketCounterStack {
 
 			            System.out.print("Enter name for Person 2: ");
 			            String n2 = sc.nextLine();
-			            System.out.print("Enter age: ");
+			            System.out.print("age: ");
 			            int a2 = sc.nextInt();
 			            sc.nextLine();
 			            System.out.print("Enter gender (MALE/FEMALE/OTHER): ");
@@ -110,7 +110,7 @@ public class TicketCounterStack {
 			            break;
 
 			        case 7:
-			            System.out.println("Exiting...");
+			            System.out.println("Exit");
 			            break;
 
 			default:
