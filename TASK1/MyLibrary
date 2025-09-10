@@ -1,0 +1,39 @@
+package library;
+
+import java.util.HashMap;
+import java.util.function.BooleanSupplier;
+
+public class MyLibrary 
+{
+ private HashMap<String, MyBook> allBooks = new HashMap<>();
+
+ public void addNewBook(MyBook b){
+     allBooks.put(b.getCode(), b);
+ }
+ public boolean issue(String c){
+     MyBook b = allBooks.get(c);
+     if(b!=null){
+         return b.giveBook();
+     }
+     return false;
+ }
+ public boolean takeBack(String c){
+     MyBook b = allBooks.get(c);
+     if(b!=null){
+         return b.takeBookBack();
+     }
+     return false;
+ }
+ public boolean isBookFree(String c){
+     MyBook b = allBooks.get(c);
+     return (b!=null && b.checkAvailable());
+ }
+ // optional: to get details of a book
+ public MyBook getBookByCode(String c){
+     return allBooks.get(c);
+ }
+ public BooleanSupplier returnBook(String string) {
+	// TODO Auto-generated method stub
+	return null;
+ }
+}
