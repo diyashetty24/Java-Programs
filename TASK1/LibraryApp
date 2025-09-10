@@ -1,0 +1,84 @@
+package library;
+import java.util.Scanner;
+
+public class LibraryApp extends MyBook {
+		public LibraryApp(String b, String w, String c) {
+		super(b, w, c);
+		// TODO Auto-generated constructor stub
+	}
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+	        MyLibrary lib = new MyLibrary();
+	        Scanner in = new Scanner(System.in);
+	        int opt = 0;
+	        do 
+	        {
+	            System.out.println("\nLibrary Management System:");
+	            System.out.println("1. Add new book:");
+	            System.out.println("2. Give book (issue):");
+	            System.out.println("3. Take book (return):");
+	            System.out.println("4. Check if available:");
+	            System.out.println("5. Exit program");
+	            System.out.print("Enter choice: ");
+	            try{
+	                opt = Integer.parseInt(in.nextLine());
+	            }
+	            catch(Exception e){
+	                System.out.println("not a number. Try again");
+	                continue;
+	            }
+
+	            if(opt==1){
+	                System.out.print("Book title: ");
+	                String t = in.nextLine();
+	                System.out.print("Author: ");
+	                String a = in.nextLine();
+	                System.out.print("Code: ");
+	                String c = in.nextLine();
+
+	                MyBook b = new LibraryApp(t,a,c);
+	                lib.addNewBook(b);
+	                System.out.println("Added successfully!");
+	            }
+	            else if(opt==2){
+	                System.out.print("Enter code to issue: ");
+	                String c = in.nextLine();
+	                if(lib.issue(c)){
+	                    System.out.println("Issued correctly.");
+	                } else {
+	                    System.out.println("Sorry, cannot issue.");
+	                }
+	            }
+	            else if(opt==3){
+	                System.out.print("Enter code to return: ");
+	                String c = in.nextLine();
+	                if(lib.takeBack(c)){
+	                    System.out.println("Thanks for returning.");
+	                } else {
+	                    System.out.println("That book was not issued.");
+	                }
+	            }
+	            else if(opt==4){
+	                System.out.print("Enter code to check: ");
+	                String c = in.nextLine();
+	                if(lib.isBookFree(c)){
+	                    System.out.println("Book is in library.");
+	                } else {
+	                    System.out.println("Book already given out.");
+	                }
+	            }
+	            else if(opt==5){
+	                System.out.println("Thank you visit again");
+	            }
+	            else{
+	                System.out.println("Invalid choice number.");
+	            }
+
+	        }while(opt!=5);
+	        in.close();
+	    }
+			
+		}
+	
+
