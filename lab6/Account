@@ -1,0 +1,35 @@
+package codes;
+
+public class Account {
+    private int acc_no;
+    private String name;
+    private double balance;
+    public Account(int acc_no, String name, double balance) {
+        this.acc_no = acc_no;
+        this.name = name;
+        this.balance = balance;
+    }
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new ArithmeticException("Deposit cannot be 0 or -ve ");
+        }
+        balance += amount; 
+        System.out.println("Deposited: " + amount);
+    }
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount <= 0) {
+            throw new ArithmeticException("Withdrawal cannot be 0 or -ve ");
+        }
+        if (amount > balance) {
+            throw new InsufficientBalanceException("Insufficient balance");
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount);
+    }
+    public void showBalance() {
+        System.out.println("Account No: " + acc_no + ", Name: " + name + ", Balance: " + balance);
+    }
+}
+
+
+   
