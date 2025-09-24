@@ -1,0 +1,22 @@
+package codes;
+
+public class MainClass {
+    public static void main(String[] args) {
+        Account account = new Account(81 , "Diya", 50000.0);
+        account.showBalance();
+        account.deposit(15000.0);
+        account.showBalance();
+        try {
+            account.withdraw(20000.0);
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        account.showBalance();
+        try {
+            account.withdraw(70000.0); 
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        account.showBalance();
+    }
+}
